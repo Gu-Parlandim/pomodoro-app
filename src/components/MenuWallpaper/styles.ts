@@ -21,7 +21,7 @@ const Container = styled(motion.div)`
   grid-gap: 2.5px;
   padding: 5px;
   user-select: none;
-  z-index: 3;
+  z-index: 5;
 
   background: #443e3e33; //rgba(68, 62, 62, 0.2);
   border-radius: 16px;

@@ -1,8 +1,8 @@
-import Pomodoro from "../../components/Pomodoro";
 import * as S from "./styles";
 import useWallpaperHook from "../../hooks/useWallpaperHook";
 import MenuButtons from "../../components/MenuButtons";
 import MenuWallpaper from "../../components/MenuWallpaper";
+import PomodoroSettings from "../../components/Pomodoro";
 
 const Home = () => {
   const { getCurrentWallpaper } = useWallpaperHook();
@@ -13,9 +13,7 @@ const Home = () => {
       <MenuButtons />
       <MenuWallpaper />
 
-      <S.Container>
-        <Pomodoro />
-      </S.Container>
+      <PomodoroSettings />
     </S.WrapperWallpaper>
   );
 };

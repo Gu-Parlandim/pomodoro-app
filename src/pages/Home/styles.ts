@@ -18,6 +18,7 @@ const WrapperWallpaper = styled.div<WallpaperProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-origin: border-box;
 `;
 
 export { Container, WrapperWallpaper };

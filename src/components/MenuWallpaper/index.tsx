@@ -1,11 +1,13 @@
 import * as S from "./styles";
 import useWallpaperHook from "../../hooks/useWallpaperHook";
+import { AnimatePresence } from "framer-motion";
+import animation from "./animation";
 
-interface MenuWallpaperProps {
+/* interface MenuWallpaperProps {
   menuVisible: boolean;
-}
+} */
 
-const MenuWallpaper: React.FC<MenuWallpaperProps> = ({ menuVisible }) => {
+const MenuWallpaper: React.FC = () => {
   const {
     getListOfWallpapers,
     setCurrentWallpaper,
@@ -21,18 +23,27 @@ const MenuWallpaper: React.FC<MenuWallpaperProps> = ({ menuVisible }) => {
   };
 
   return (
-    <S.Container $isVisible={menuWallpaperIsVisible && menuVisible}>
-      {getListOfWallpapers().map((wallpaper) => (
-        <S.ButtonCard
-          key={wallpaper.id}
-          title="background"
-          type="button"
-          onClick={handleSetWallpaper(wallpaper.url)}
+    <AnimatePresence>
+      {menuWallpaperIsVisible && (
+        <S.Container
+          variants={animation}
+          initial="initial"
+          animate="animate"
+          exit="exit"
         >
-          <img src={wallpaper.url} alt="" />
-        </S.ButtonCard>
-      ))}
-    </S.Container>
+          {getListOfWallpapers().map((wallpaper) => (
+            <S.ButtonCard
+              key={wallpaper.id}
+              title="background"
+              type="button"
+              onClick={handleSetWallpaper(wallpaper.url)}
+            >
+              <img src={wallpaper.url} alt="" />
+            </S.ButtonCard>
+          ))}
+        </S.Container>
+      )}
+    </AnimatePresence>
   );
 };
 

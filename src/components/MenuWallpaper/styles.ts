@@ -1,11 +1,11 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-interface ContainerProps {
+/* interface ContainerProps {
   $isVisible: boolean;
-}
+} */
 
-const Container = styled.div<ContainerProps>`
-  display: ${(props) => (props.$isVisible ? "grid" : "none")};
+const Container = styled(motion.div)`
   position: absolute;
   bottom: 86px;
   width: 220px;
@@ -15,6 +15,7 @@ const Container = styled.div<ContainerProps>`
   border-radius: 6px;
   background-color: #282a36f7;
   overflow-y: scroll;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2.5px;
   padding: 5px;

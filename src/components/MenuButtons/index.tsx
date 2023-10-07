@@ -41,7 +41,7 @@ const MenuButtons: React.FC = () => {
             animate="animate"
             exit="exit"
           >
-            <MenuWallpaper menuVisible={true} />
+            <MenuWallpaper />
 
             <S.Button onClick={handleMenuWallpaperToggle} type="button">
               <PictureFilled style={{ fontSize: "25px" }} color="#c1c1c1" />

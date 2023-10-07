@@ -9,6 +9,8 @@ import { useCallback, useState } from "react";
 import MenuWallpaper from "../MenuWallpaper";
 import useWallpaperHook from "../../hooks/useWallpaperHook";
 import useScreenMode from "../../hooks/useScreenMode";
+import { AnimatePresence } from "framer-motion";
+import animation from "./animation";
 
 const MenuButtons: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -30,34 +32,47 @@ const MenuButtons: React.FC = () => {
   return (
     <>
       <S.Container onClick={handleMenu}></S.Container>
-      <S.WrapperButtons $isVisible={isVisible}>
-        <MenuWallpaper menuVisible={isVisible} />
 
-        <S.Button onClick={handleMenuWallpaperToggle} type="button">
-          <PictureFilled style={{ fontSize: "25px" }} color="#c1c1c1" />
-          <span>Tema</span>
-        </S.Button>
+      <AnimatePresence>
+        {isVisible && (
+          <S.WrapperButtons
+            variants={animation}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            <MenuWallpaper menuVisible={true} />
 
-        <S.Button onClick={toggleScreenMode} type="button">
-          {getCurrentScreenMode() === "fullscreen" ? (
-            <FullscreenExitOutlined
-              style={{ fontSize: "25px" }}
-              color="#c1c1c1"
-            />
-          ) : (
-            <FullscreenOutlined style={{ fontSize: "25px" }} color="#c1c1c1" />
-          )}
+            <S.Button onClick={handleMenuWallpaperToggle} type="button">
+              <PictureFilled style={{ fontSize: "25px" }} color="#c1c1c1" />
+              <span>Tema</span>
+            </S.Button>
 
-          <span>
-            {getCurrentScreenMode() == "fullscreen" ? "Exit" : "FullScreen"}
-          </span>
-        </S.Button>
+            <S.Button onClick={toggleScreenMode} type="button">
+              {getCurrentScreenMode() === "fullscreen" ? (
+                <FullscreenExitOutlined
+                  style={{ fontSize: "25px" }}
+                  color="#c1c1c1"
+                />
+              ) : (
+                <FullscreenOutlined
+                  style={{ fontSize: "25px" }}
+                  color="#c1c1c1"
+                />
+              )}
 
-        <S.Button type="button">
-          <ClockCircleFilled style={{ fontSize: "25px" }} color="#c1c1c1" />
-          <span>Pomodoro</span>
-        </S.Button>
-      </S.WrapperButtons>
+              <span>
+                {getCurrentScreenMode() == "fullscreen" ? "Exit" : "FullScreen"}
+              </span>
+            </S.Button>
+
+            <S.Button type="button">
+              <ClockCircleFilled style={{ fontSize: "25px" }} color="#c1c1c1" />
+              <span>Pomodoro</span>
+            </S.Button>
+          </S.WrapperButtons>
+        )}
+      </AnimatePresence>
     </>
   );
 };

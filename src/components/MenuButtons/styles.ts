@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-interface WrapperButtonsProps {
+/* interface WrapperButtonsProps {
   $isVisible: boolean;
-}
+} */
 
 const Container = styled.div`
   width: 100vw;
@@ -11,21 +12,20 @@ const Container = styled.div`
   z-index: 1;
 `;
 
-const WrapperButtons = styled.div<WrapperButtonsProps>`
+const WrapperButtons = styled(motion.div)`
   position: absolute;
   width: 400px;
   bottom: 20px;
   background-color: #282a36f7; //#282a3680;
   z-index: 2;
   left: 50%;
-  transform: translateX(-50%);
+  //transform: translateX(-50%);
   color: #efefef;
   border-radius: 6px;
-  //display: flex;
+  display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
-  display: ${(props) => (props.$isVisible ? "flex" : "none")};
   cursor: pointer;
 `;
 

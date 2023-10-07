@@ -6,7 +6,6 @@ import {
 } from "@ant-design/icons";
 import * as S from "./styles";
 import { useCallback, useState } from "react";
-import MenuWallpaper from "../MenuWallpaper";
 import useWallpaperHook from "../../hooks/useWallpaperHook";
 import useScreenMode from "../../hooks/useScreenMode";
 import { AnimatePresence } from "framer-motion";
@@ -41,8 +40,6 @@ const MenuButtons: React.FC = () => {
             animate="animate"
             exit="exit"
           >
-            <MenuWallpaper />
-
             <S.Button onClick={handleMenuWallpaperToggle} type="button">
               <PictureFilled style={{ fontSize: "25px" }} color="#c1c1c1" />
               <span>Tema</span>

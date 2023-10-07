@@ -7,12 +7,12 @@ import styled from "styled-components";
 
 const Container = styled(motion.div)`
   position: absolute;
-  bottom: 86px;
+  bottom: 108px;
   width: 220px;
-  max-height: 260px;
+  max-height: 199px;
   height: 100%;
   min-height: 180px;
-  left: 10px;
+  left: 50%;
   border-radius: 6px;
   //background-color: #282a36f7;
   overflow-y: scroll;
@@ -21,6 +21,7 @@ const Container = styled(motion.div)`
   grid-gap: 2.5px;
   padding: 5px;
   user-select: none;
+  z-index: 3;
 
   background: #443e3e33; //rgba(68, 62, 62, 0.2);
   border-radius: 16px;

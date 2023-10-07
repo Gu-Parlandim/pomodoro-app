@@ -2,6 +2,7 @@ export default {
   initial: {
     scale: 0.75,
     opacity: 0,
+    transform: "translateX(-88%)",
   },
   animate: {
     opacity: 1,

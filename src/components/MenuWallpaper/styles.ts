@@ -9,17 +9,25 @@ const Container = styled(motion.div)`
   position: absolute;
   bottom: 86px;
   width: 220px;
-  height: 260px;
-  background: #fff;
+  max-height: 260px;
+  height: 100%;
+  min-height: 180px;
   left: 10px;
   border-radius: 6px;
-  background-color: #282a36f7;
+  //background-color: #282a36f7;
   overflow-y: scroll;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2.5px;
   padding: 5px;
   user-select: none;
+
+  background: #443e3e33; //rgba(68, 62, 62, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(68, 62, 62, 0.3);
 
   &::-webkit-scrollbar {
     width: 2px;

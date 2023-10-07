@@ -27,6 +27,13 @@ const WrapperButtons = styled(motion.div)`
   align-items: center;
   padding: 10px 0;
   cursor: pointer;
+
+  background: #443e3e33;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(68, 62, 62, 0.3);
 `;
 
 const Button = styled.button`

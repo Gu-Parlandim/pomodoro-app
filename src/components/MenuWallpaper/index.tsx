@@ -38,7 +38,7 @@ const MenuWallpaper: React.FC = () => {
               type="button"
               onClick={handleSetWallpaper(wallpaper.url)}
             >
-              <img src={wallpaper.url} alt="" />
+              <img src={wallpaper.url} alt="" loading="lazy" />
             </S.ButtonCard>
           ))}
         </S.Container>
